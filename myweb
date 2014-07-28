@@ -1,9 +1,9 @@
 server {
 	listen   8081; ## listen for ipv4; this line is default and implied
 
-	server_name soluciona.pe *.soluciona.pe;
+	server_name altavoz.pe *.altavoz.pe;
        
-	root /var/www/soluciona.pe;
+	root /var/www/altavoz.pe;
 	index index.php index.html index.htm;
 	
 	location ~* \.(jpg|png|gif|jpeg|css|js)$ {
@@ -16,8 +16,8 @@ server {
 		include fastcgi_params;
 	}
 
-	if ($http_host != "soluciona.pe") {
-                 rewrite ^ http://soluciona.pe$request_uri permanent;
+	if ($http_host != "altavoz.pe") {
+                 rewrite ^ http://altavoz.pe$request_uri permanent;
        	}
 	include global/restrictions.conf;
 	include global/wordpress-ms-subdir.conf;
